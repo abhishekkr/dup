@@ -21,4 +21,6 @@
 
 * run build: `./dup -h`
 
+* download escript build from [latest release](https://github.com/abhishekkr/dup/releases/latest)
+
 ---
