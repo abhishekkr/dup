@@ -28,11 +28,10 @@ defmodule Dup.CLI do
 
   def process(:help) do
     IO.puts("usage: dup dirpath [dirpath ..]")
-    System.halt(0)
   end
   def process(paths) do
     {:ok, _pathfinder} = Dup.PathFinder.start_link(paths)
-    {:ok, gatherer} = Dup.Gatherer.start_link([cli: self(), worker_count: @worker_count])
+    {:ok, _gatherer} = Dup.Gatherer.start_link([cli: self(), worker_count: @worker_count])
     receive do
       :done -> report_results()
     end
@@ -45,7 +44,6 @@ defmodule Dup.CLI do
     do_report_results(tail)
   end
   defp report_results do
-    IO.puts("Results:\n")
     Dup.Results.find_duplicates() |> do_report_results()
   end
 end

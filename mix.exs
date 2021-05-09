@@ -44,7 +44,7 @@ defmodule Dup.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:vasuki, "~> 0.1.1"},
+      {:vasuki, "~> 0.1.2"},
       {:excoveralls, "~> 0.14.0", only: :test},  ## test coverage
       {:ex_doc, "~> 0.24.2", only: :dev, runtime: false},  ## load only in dev mode
     ]
